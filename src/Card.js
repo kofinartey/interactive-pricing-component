@@ -1,10 +1,71 @@
 import React, { useState } from "react";
-import CardSlider from "./CardSlider.js";
-import CardSwitch from "./images/CardSwitch.js";
+import { Slider } from "@material-ui/core";
+import { Switch } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import styles from "./CardStyles.js";
 import { withStyles } from "@material-ui/core";
 import check from "./images/icon-check.svg";
+import thumb from "./images/icon-slider.svg";
+
+//customize slider from MUI slider
+const CardSlider = withStyles({
+  root: {},
+  rail: {
+    backgroundColor: "hsl(224, 65%, 95%)",
+    height: ".6rem",
+    borderRadius: "1rem",
+    marginTop: ".4rem",
+  },
+  track: {
+    height: ".6rem",
+    borderRadius: "1rem 0 0 1rem ",
+    marginTop: ".4rem",
+    backgroundColor: "#A8F1E8",
+  },
+  thumb: {
+    backgroundImage: `url(${thumb})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundColor: "#77ECDC",
+    width: "2rem",
+    height: "2rem",
+    "&:active": {
+      backgroundColor: "#20AFA0",
+      cursor: "grabbing",
+    },
+  },
+})(Slider);
+
+//customize switch
+const CardSwitch = withStyles({
+  root: {},
+  thumb: {
+    backgroundColor: "white",
+    height: "0.8rem",
+    width: "0.8rem",
+    marginTop: ".2rem",
+    position: "absolute",
+  },
+  switchBase: {
+    left: ".6rem",
+    top: ".6rem",
+    "&$checked + $track": {
+      backgroundColor: "#7FE8D9",
+      opacity: "1",
+    },
+    "&:hover + $track": {
+      backgroundColor: "#7FE8D9",
+      opacity: "1",
+    },
+  },
+  checked: {},
+  track: {
+    height: "1.2rem",
+    width: "3rem",
+    borderRadius: "1rem",
+    marginTop: "-0.1rem",
+  },
+})(Switch);
 
 const planFeatures = [
   " Unlimited websites",
