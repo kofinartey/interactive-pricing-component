@@ -1,45 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import CardSlider from "./CardSlider.js";
 import CardSwitch from "./images/CardSwitch.js";
-import { TimeContext } from "./context/TimeContext.js";
-import { Slider } from "@material-ui/core";
-// import { Switch } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
-import { Button } from "@material-ui/core";
 import styles from "./CardStyles.js";
 import { withStyles } from "@material-ui/core";
 import check from "./images/icon-check.svg";
-import thumb from "./images/icon-slider.svg";
-
-//customize slider from MUI slider
-// const CardSlider = withStyles({
-//   root: {
-//   },
-//   rail: {
-//     backgroundColor: "hsl(224, 65%, 95%)",
-//     height: ".6rem",
-//     borderRadius: "1rem",
-//     marginTop: ".4rem",
-//   },
-//   track: {
-//     height: ".6rem",
-//     borderRadius: "1rem 0 0 1rem ",
-//     marginTop: ".4rem",
-//     backgroundColor: "#A8F1E8",
-//   },
-//   thumb: {
-//     backgroundImage: `url(${thumb})`,
-//     backgroundRepeat: "no-repeat",
-//     backgroundPosition: "center",
-//     backgroundColor: "#77ECDC",
-//     width: "2rem",
-//     height: "2rem",
-//     "&:active": {
-//       backgroundColor: "#20AFA0",
-//       cursor: "grabbing",
-//     },
-//   },
-// })(Slider);
 
 const planFeatures = [
   " Unlimited websites",
@@ -85,7 +50,7 @@ const Card = (props) => {
             {displayViews()}
             <div className={classes.slider}>
               <CardSlider
-                defaultValue={level}
+                value={level}
                 steps={2}
                 min={1}
                 max={5}
