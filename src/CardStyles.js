@@ -11,6 +11,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     padding: "2rem 0",
+    marginBottom: "2rem",
   },
 
   Card__section: {
